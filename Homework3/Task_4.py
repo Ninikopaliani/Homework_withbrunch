@@ -15,12 +15,10 @@ bought_date = datetime(year_of_purchase, month_of_purchase, day_of_purchase)
 current_date = datetime.today()
 
 btc = forex_python.bitcoin.BtcConverter()
-bought_price = btc.get_previous_price("USD", bought_date)
-current_price = btc.get_latest_price("USD")
+bought_price_per = btc.get_previous_price("USD", bought_date)
+current_price_per = btc.get_latest_price("USD")
+bought_price = price_of_btc * bought_price_per
+current_price = price_of_btc * current_price_per
 
-paid_per_btc = price_of_btc / bought_price
-profit = (paid_per_btc-current_price)/paid_per_btc
-if profit >= 0:
-    print("your profit is: ", profit)
-else:
-    print("you lost: ", profit)
+print("bought price was : ", round(bought_price), ",     current price is : ", round(current_price))
+

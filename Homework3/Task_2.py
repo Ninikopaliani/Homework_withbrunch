@@ -20,4 +20,3 @@ elif datetime.date.weekday(weekday) == 4:
     print("Friday")
 else:
     print("Saturday")
-    
