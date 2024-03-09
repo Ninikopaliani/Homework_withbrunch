@@ -1,3 +1,4 @@
+
 n = int(input("Enter number from 0 to 50: "))
 
 if 0 < n < 50:
