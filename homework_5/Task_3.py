@@ -1,28 +1,12 @@
-
-a = int(input("Enter side a: "))
-b = int(input("Enter side b: "))
-
-
-for i in range(a):
-    for j in range(b):
-        if i == 0:
-            if j != b//2:
-                print(" ", end=" ")
-            else:
-                print("*", end=" ")
-        elif 0<i<(a-1):
-            if j < b//2:
-                print("/" , end=" ")
-            elif j==b//2:
-                print("|",end=" ")
-            elif j > b//2:
-                print("/", end=" ")
-
-# ვერ ჩავწერე ასეთიჩანაწერი -  \"
-
-        elif i== a-1:
-            if j != b//2:
-                print(" " ,end=" ")
-            else:
-                print("|", end=" ")
-    print()
+n = int(input("Enter tree size: "))
+# pint n-i" " და i"*"
+for i in range(n):
+    if i == 0:
+        top = (" " * (n - i)) + ((i+1) * "*")
+        print(top)
+    elif 0 < i < (n-1):
+        middle = ((" " * (n - i)) + (i * "/") + "|" + (i * '\\'))
+        print(middle)
+    elif i == (n-1):
+        bottom = (" " * n + "|")
+        print(bottom)
