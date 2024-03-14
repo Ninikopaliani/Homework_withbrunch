@@ -20,3 +20,4 @@ if 0 < n < 10:
         i += 1
 else:
     print("please enter valid number")
+
