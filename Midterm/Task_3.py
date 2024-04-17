@@ -3,7 +3,7 @@ import random
 
 def random_():
     digit = "rps"
-    random_number = random.randint(1, 3)
+    random_number = random.randint(0, 2)
     random_digit = digit[random_number]
     return random_digit
 
@@ -11,6 +11,10 @@ def random_():
 def user():
     user_digit = input("please enter digit (r,p,s): ")
     return user_digit
+
+
+print(random_(), user())
+print(type(random_()))
 
 
 def main():
@@ -32,6 +36,5 @@ def main():
 
 
 main()
-
 
 
