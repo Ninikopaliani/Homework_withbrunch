@@ -21,37 +21,46 @@ class Department:
     def average(self):
         employee_salary = []
         for i in range(len(self.employee)):
-            employee_salary.append(self.employee[i][2])
+            employee_salary.append(self.employee[i][3])
         return sum(employee_salary)/len(employee_salary)
 
     def max(self):
         employee_max_salary = []
         for i in range(len(self.employee)):
-            if max(employee_max_salary) < self.employee[i][2]:
-                employee_max_salary.append(self.employee[i][2])
+            if max(employee_max_salary) < self.employee[i][3]:
+                employee_max_salary.append(self.employee[i][3])
         return employee_max_salary
 
     def min(self):
         employee_min_salary = []
         for i in range(len(self.employee)):
-            if min(employee_min_salary) > self.employee[i][2]:
-                employee_min_salary.append(self.employee[i][2])
+            if min(employee_min_salary) > self.employee[i][3]:
+                employee_min_salary.append(self.employee[i][3])
         return employee_min_salary
 
 
-def read_json_file(filename):
+def read_json(filename):
     try:
-        with open(filename, "r") as file:
-            data = file.load(file)
-            return data
-    except FileNotFoundError:
-        print(f"Error: file {filename} not found ")
+        with open(filename, 'r') as file:
+            data = json.load(file)
+        return data
+    except json.JSONDecodeError:
+        print(f"Error: Invalid JSON format in file '{filename}'.")
+        return None
 
 
-def object_create():
-    data_file = read_json_file("homework_1.json")
+def main():
+    input_file = "homework_1.json"
+    data = read_json(input_file)
+    print(type(data))
+    name, description, employee = data["department_1"]
+    print(name,description,employee)
+    print(data["department_1"]["employees"])
+    print("*" * 60)
+    Department.average()
 
 
-
+if __name__ == "__main__":
+    main()
 
 
