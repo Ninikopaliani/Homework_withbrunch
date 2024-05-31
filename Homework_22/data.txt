@@ -1,0 +1,7 @@
+nino,Coca-cola,3,15
+ani,strawberry,7,60
+mariam,banana,6,40
+dato,ice cream,7,85,
+salome,sugar,2,5
+mishka,bread,5,6
+qeta,chewing gum,2,3
